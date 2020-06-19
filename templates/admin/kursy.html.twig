@@ -1,0 +1,21 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block body %}
+    <h2>Kursy na trasie {{ trasa }}</h2>
+    <div class='kursy'>
+    {% for kurs in kursy %}
+        <a href="{{ path('admin.edytuj_kurs', { id: kurs.id }) }}"><h3>{{ kurs.czas }} <span>{{ kurs.symbole }}</span></h3></a>
+    {% endfor %}
+    </div>
+    <div class='route-legend'>
+        {{ trasa.legenda }}
+    </div>
+    <a href='{{ path('admin.nowy_kurs', { id: trasa.id }) }}'><button class='btn btn-primary'>Dodaj kurs</button></a>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        const legenda = document.querySelector('.route-legend');
+        legenda.innerHTML = legenda.innerHTML.replace(/(?:\r\n|\r|\n)/g, '<br />');
+    </script>
+{% endblock %}

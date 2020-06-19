@@ -1,0 +1,15 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block body %}
+    <h2>Posty</h2>
+    <ul>
+    {% for news in newsy %}
+    <li><a href="{{ path('admin.post', { id: news.id }) }}">
+        {{ news.title }}
+        <h5>{{ news.time }}</h5>
+    </a></li>
+    {% endfor %}
+    </ul>
+
+    <a href='{{ path('admin.nowy_post') }}'><button class='btn btn-primary'>Nowy Post</button></a>
+{% endblock %}

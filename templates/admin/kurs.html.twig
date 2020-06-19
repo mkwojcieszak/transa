@@ -1,0 +1,6 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block body %}
+    {{ form(form) }}
+    <a href='{{ path('admin.kursy', {id: trasa.id}) }}'><button class='btn btn-primary'>Powrót</button></a>
+{% endblock %}

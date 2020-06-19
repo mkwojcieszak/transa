@@ -1,0 +1,81 @@
+.admin-bar {
+    height: 60px;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    background: #404040;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 5px solid white;
+    a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: white;
+        font-size: 1.5em;
+        font-weight: bold;
+        &:hover { color: #ff8297; }
+    }
+
+}
+
+
+.big-container {
+    width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #444494, #6969dd,#444494);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+
+    * {
+        color: white;
+        text-decoration: none;
+    }
+
+    a {
+        &:hover, &:active {
+            color: #ff8297;
+            text-decoration: none;
+        }
+    }
+
+    input, textarea {
+        background: #fff;
+        color: black;
+        border: 2px solid #444494;
+    }
+
+    .kursy {
+        display: flex;
+        flex-wrap: wrap;
+
+        a {
+            margin: 10px 20px;
+            span { font-size: 0.7em }
+        }
+        a:hover * { color: #ff8297; }
+    }
+
+    form textarea {
+        height: 200px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+}
+
+.small-container {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    height: 90%;
+    background: #404040;
+    border-radius: 10px;
+    padding: 80px 20px 20px 20px;
+}

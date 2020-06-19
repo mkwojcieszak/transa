@@ -1,0 +1,226 @@
+{% extends 'front_base.html.twig' %}
+
+{% block title %}Transa{% endblock %}
+
+{% block body %}
+<div class="site">
+<div class='bg'>
+
+
+
+
+<div class='main-logo'><h1>Transa</h1><h4>Przewozy pasażerskie</h4></div>
+
+
+
+
+
+<ul class='nav-list'>
+    <li>
+        <a href='#' class='nav-link'>
+            <div class="icon">
+                <i class='fa fa-home' aria-hidden='true'></i>
+                <i class='fa fa-home' aria-hidden='true'></i>
+            </div>
+            <div class="name">
+                <p>Nowości</p>
+                <p>Nowości</p>
+            </div>
+        </a>
+    </li>
+    <li>
+        <a href='#' class='nav-link'>
+            <div class="icon">
+                <i class='fa fa-bus' aria-hidden='true'></i>
+                <i class='fa fa-bus' aria-hidden='true'></i>
+            </div>
+            <div class="name">
+                <p>Oferta</p>
+                <p>Oferta</p>
+            </div>
+        </a>
+    </li>
+    <li>
+        <a href='#' class='nav-link'>
+            <div class="icon">
+                <i class='fa fa-road' aria-hidden='true'></i>
+                <i class='fa fa-road' aria-hidden='true'></i>
+            </div>
+            <div class="name">
+                <p>Rozkłady</p>
+                <p>Rozkłady</p>
+            </div>
+        </a>
+    </li>
+    <li>
+        <a href='#' class='nav-link'>
+            <div class="icon">
+                <i class='fa fa-envelope' aria-hidden='true'></i>
+                <i class='fa fa-envelope' aria-hidden='true'></i>
+            </div>
+            <div class="name">
+                <p>Kontakt</p>
+                <p>Kontakt</p>
+            </div>
+        </a>
+    </li>
+    <li>
+        <a href='#' class='nav-link'>
+            <div class="icon">
+                <i class='fa fa-file' aria-hidden='true'></i>
+                <i class='fa fa-file' aria-hidden='true'></i>
+            </div>
+            <div class="name">
+                <p>Certyfikaty</p>
+                <p>Certyfikaty</p>
+            </div>
+        </a>
+    </li>
+</ul>
+
+
+
+
+
+    <div class='tab-wrapper'>
+
+
+
+        <div class='tab hidden' id='news'><div class='page-container'>
+        <div class='news-wrapper'>
+            {% for news in newsy %}
+                <div class='post'>
+                    <h3>{{ news.title }}<span>{{ news.time }}</span></h3>
+                    <p>{{ news.message }}</p>
+                </div>
+            {% endfor %}
+            </div>
+        </div></div>
+
+
+
+        <div class='tab hidden' id='oferta'><div class='page-container'>
+            <h3>Wynajem pojazdów</h3>
+                <p>Dysponujemy pojazdami <b>18, 20 i 55 miejscowymi</b>. Oferujemy wyjazdy dla grup na imprezy sportowe, kulturalne itp. Jeżeli potrzebują Państwo transportu osobowego, aby bezpiecznie i na czas dojechać tam gdzie zaplanowaliście to autobusy naszej firmy prowadzone przez doświadczonych i profesjonalnych kierowców, spełnią wszystkie Państwa oczekiwania.</p>
+            <h3>Regularne linie</h3>
+            <ul>
+                <li>Szczecin - Stargard</li>
+                <li>Szczecin - Pyrzyce</li>
+                <li>Stargard - Pyrzyce</li>
+                <li>Stargard - Brzezina</li>
+                <li>Stargard - Żuków</li>
+            </ul>
+            <h3>Sprzedaż biletów autokarowych ONLINE</h3>
+            <ul>
+                <li>Przewody MIĘDZYNARODOWE</li>
+                <li>Przewozy KRAJOWE</li>
+                <li>Dowozy na LOTNISKO</li>
+            </ul>
+            <h3>Auto serwis</h3>
+            <ul>
+                <li>diagnostyka komputerowa</li>
+                <li>mechanika pojazdowa</li>
+                <li>obsługa:</li>
+    filtry, oleje i płyny
+                <li>zawieszenia pojazdów:</li>
+    łożyska, amortyzatory
+                <li>układ hamulcowy:</li>
+    klocki i tarcze hamulcowe
+                <li>układy wydechowe:</li>
+    tłumiki
+                <li>przygotowanie do przeglądów technicznych</li>
+                <li>drobne naprawy blacharskie</li>
+                <li>sprzedaż opon samochodowych</li>
+    pełna gama: opony osobowe, SUV, dostawcze, motocyklowe, quad
+                <li>wymiana opon</li>
+                <li>sprzedaż felg aluminiowych</li>
+            </ul>
+        </div></div>
+        <div class='tab hidden' id='kursy'><div class='page-container'>
+            <div class='route-buttons'>
+            {% for trasa in trasy %}
+            <button class='route-button'>{{trasa}}</button>
+            {% endfor %}
+            </div>
+            <div class='routes'>
+            {% for kursyJednejTrasy in kursy %}
+                <h3 class='route-title hidden'></h3>
+                <div class='route-div hidden'>
+                {% for kurs in kursyJednejTrasy %}
+                <h3 class='course'>{{ kurs.czas }}<span>{{ kurs.symbole }}</span></h3>
+                {% endfor %}
+                </div>
+            {% endfor %}
+            </div>
+            {% for trasa in trasy %}
+            <p class='route-legend hidden'>{{trasa.legenda}}</p>
+            {% endfor %}
+        </div></div>
+
+
+
+        <div class='tab hidden' id='kontakt'><div class='page-container'>
+            <div class='contact-wrapper'>
+                <h3>Adres do korespondencji</h3>
+                <p>70-326 Szczecin, Al. Piastów 75/7</p>
+                <p>e-mail: biuro@transa.pl</p>
+                <h3>Biuro</h3>
+                <p>Stargard, ul. Dworcowa 9 pok. 113a (I piętro)</p>
+                <p>Szczecin, ul. Dworcowa 20b (róg Św.Ducha i Nowa)</p>
+                <h3>Bilety autokarowe online</h3>
+                <p>e-mail: bilety@transa.pl</p>
+                <button class='open-form-button'>NAPISZ DO NAS</button>
+            </div>
+        </div></div>
+
+
+
+        <div class='tab hidden' id='certyfikaty'><div class='page-container'>
+            <div class='certification-wrapper'>
+                <div class='img-icon-wrapper'><h3>Polska</h3><img class='img-icon' src='/images/licencja.jpg'></img></div>
+                <div class='img-icon-wrapper'><h3>EU</h3><img class='img-icon' src='/images/licencja_UE.jpg'></img></div>
+            </div>
+        </div></div>
+
+    </div>
+<img class='img-display hidden' src='/images/licencja.jpg'></img>
+<img class='img-display hidden' src='/images/licencja_UE.jpg'></img>
+    <div class='footer'>
+        <p>Strona stworzona przez <a href='http://mateuszwojcieszak.com'>Mateusza Wojcieszaka</a> dla @Transa</p><a href='{{ path('app_login') }}'><button>Panel Administratora</button></a>
+    </div>
+</div>
+</div>
+
+<div class='contact-form hidden'>
+    <div class='close-div'><i class='fa fa-times close-form-button'></i></div>
+    <div class='input-div'>
+        <div class='label'>Imię</div>
+        <input type='text' id='name'>
+    </div>
+    <div class='input-div'>
+        <div class='label'>E-mail</div>
+        <input type='text' id='email'>
+    </div>
+    <div class='input-div'>
+        <div class='label'>Nr tel.</div>
+        <input type='text' id='phone'>
+    </div>
+    <div class='input-div'>
+        <div class='label'>Liczba miejsc</div>
+        <input type='text' id='seats'>
+    </div>
+    <div class='input-div'>
+        <div class='label'>Miejsce podstawienia pojazdu</div>
+        <input type='text' id='start'>
+    </div>
+    <div class='input-div'>
+        <div class='label'>Miejsce docelowe</div>
+        <input type='text' id='end'>
+    </div>
+    <div class='input-div'>
+        <div class='label'>Informacje dodatkowe</div>
+        <textarea type='text' id='message'></textarea>
+    </div>
+    <button class='send-contact' id='send-message'>Wyślij</button>
+</div>
+{% endblock %}

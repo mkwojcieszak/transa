@@ -1,0 +1,118 @@
+.open-form-button {
+    color: white;
+    background: #ff8297;
+    padding: 20px 40px;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    border: none;
+    margin: 0 auto;
+    align-self: center;
+    justify-self: center;
+    cursor: pointer;
+    &:hover, &:focus
+    {
+        color: #ff8297;
+        background: white;
+    }
+}
+
+.send-contact {
+    color: white;
+    background: #ff8297;
+    padding: 10px 20px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    float: right;
+    margin: 10px 0;
+    align-self: center;
+    justify-self: center;
+    cursor: pointer;
+    &:hover, &:focus
+    {
+        color: #ff8297;
+        background: white;
+    }
+}
+
+.contact-wrapper {
+    * {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    h3 { border: none !important; margin-top: 25px; }
+}
+
+.contact-form {
+    position: absolute;
+    z-index: 100;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    //min-height: ;
+    padding: 10px 20px;
+    background: #404040;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px #00000055;
+
+    &.hidden { display: none; }
+
+    .close-div {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    i {
+        font-size: 2.5em;
+        color: #ff8297;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+            background: #ff8297;
+            color: #404040;
+        }
+    }
+
+    .label {
+        color: white;
+        padding: 20px 0 10px 0;
+    }
+
+    input, textarea {
+        width: calc(100% - 20px);
+        border: 1px solid black;
+        padding: 5px 10px;
+    }
+
+    textarea {
+        height: 100px;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .contact-form {
+        padding: 10px;
+        top: 10px;
+        transform: translate(-50%, 0);
+
+        .label {
+            padding: 10px 0 5px 0;
+        }
+    }
+    
+}

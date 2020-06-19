@@ -1,0 +1,139 @@
+.nav-list {
+    z-index: 10;
+    position: fixed;
+    left: 50vw;
+    top: 110px;
+    transform: translate(-50%, 0);
+    margin: 0;
+    padding: 10px 0;
+    background: #404040;
+    list-style: none;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px #00000055;
+
+    li {
+        text-align: center;
+        display: block;
+        //width: 100px;
+        border-right: 1px solid #ffffff80;
+        &:last-child { border-right: none; }
+
+        a {
+            text-decoration: none;
+            padding: 0 10px;
+            display: block;
+            width: 100px;
+
+            .icon {
+                width: 40px;
+                height: 40px;
+                text-align: center;
+                overflow: hidden;
+                margin: 0 auto 10px;
+
+                .fa {
+                    width: 100%;
+                    height: 100%;
+                    line-height: 40px;
+                    font-size: 34px;
+                    transition: 0.3s;
+                    color: #eee;
+                    &:last-child { color: #ff8297; }
+                }
+            }
+
+
+            .name {
+                width: 100%;
+                text-align: center;
+                display: block;
+                overflow: hidden;
+                height: 30px;
+            }
+        }
+
+        a:hover .icon .fa {
+            transform: translateY(-100%);
+        }
+
+        a .name p {
+            line-height: 30px;
+            transform: translateY(-100%);
+            transition: 0.3s;
+            margin: 0;
+            color: #eee;
+            &:first-child { color: #ff8297; }
+        }
+
+        a:hover .name p {
+            transform: translateY(0);
+        }
+    }
+    
+}
+
+
+@media screen and (max-width: 800px) {
+    .nav-list {
+        top: 70px;
+
+        li {
+            a {
+                width: 60px;
+
+                .icon {
+                    width: 30px;
+                    height: 30px;
+
+                    .fa { line-height: 30px; font-size: 25px; }
+                }
+
+                .name {
+                    height: 20px;
+
+                    p { line-height: 20px; }
+                }
+            }
+        }
+
+    }
+}
+
+
+@media screen and (max-width: 800px) and (orientation: landscape) {
+    .nav-list {
+        left: auto;
+        top: 5px;
+        right: 5px;
+        transform: translate(0, 0);
+    }
+}
+
+@media screen and (max-width: 550px) and (orientation: portrait) {
+    .nav-list {
+        top: 70px;
+
+        li {
+            a {
+                width: 60px;
+                padding: 0 3px;
+                font-size: 0.8em;
+                .icon {
+                    width: 22px;
+                    height: 22px;
+
+                    .fa { line-height: 22px; font-size: 18px; }
+                }
+
+                .name {
+                    height: 15px;
+
+                    p { line-height: 15px; }
+                }
+            }
+        }
+
+    }
+}
+

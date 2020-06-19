@@ -1,0 +1,15 @@
+.post {
+    border-bottom: 2px solid grey;
+
+    h3 span {
+        color: white;
+        font-size: 0.7em;
+        padding-left: 20px;
+        float: right;
+    }
+}
+
+.news-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+}

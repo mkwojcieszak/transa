@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css' type='text/css'>
+        <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.4.1/css/all.css'>
+        <link rel='stylesheet' href='/style/main.css' type='text/css'/>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+    <div class='big-container'>
+        <div class='small-container'>
+        <div class='admin-bar'>
+        <a href='{{ path('admin.posty') }}'>Posty</a>
+        <a href='{{ path('admin.trasy') }}'>Trasy</a>
+        <a href='{{ path('app_logout') }}'>Wyloguj</a>
+        </div>
+        {% block body %}{% endblock %}
+        </div>
+    </div>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

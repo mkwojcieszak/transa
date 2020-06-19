@@ -1,0 +1,13 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block body %}
+    <h2>Trasy</h2>
+    <ul>
+    {% for trasa in trasy %}
+    <li><a href="{{ path('admin.trasa', { id: trasa.id }) }}">{{ trasa.start }} - {{ trasa.end }}</a>
+    (<a href="{{ path('admin.kursy', { id: trasa.id }) }}">edytuj kursy</a>)</li>
+    {% endfor %}
+    </ul>
+
+    <a href='{{ path('admin.nowa_trasa') }}'><button class='btn btn-primary'>Nowa trasa</button></a>
+{% endblock %}
